@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <link href="styles.css" rel="stylesheet">
+        <title>CS50</title>
+    </head>
+    <body>
+        <ul class="nav nav-pills nav-fill">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/games.html">Computer Games</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/programming.html">Programming</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="/cs50.html">Why CS50</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/about.html">About Me</a>
+            </li>
+        </ul>
+        <br>
+
+        <h1>How Much Did I Love CS50?</h1>
+        <br>
+        <div class = "smiley">
+          <div class = "face">
+            <div class = "eyes">
+              <span class = "eye"></span>
+              <span class = "eye"></span>
+            </div>
+          </div>
+          <div class = "face">
+            <div class = "eyes">
+              <span class = "eye"></span>
+              <span class = "eye"></span>
+            </div>
+          </div>
+        </div>
+        <script>
+            document.querySelector("body").addEventListener("mousemove", eyeball);
+            function eyeball() {
+
+                var eye = document.querySelectorAll(".eye");
+                eye.forEach(function(eye) {
+                    let x = (eye.getBoundingClientRect().left) + (eye.clientWidth / 2);
+                    let y = (eye.getBoundingClientRect().top) + (eye.clientHeight / 2);
+                    let radian = Math.atan2(event.pageX - x, event.pageY - y);
+                    let rot = (radian * (180 / Math.PI) * -1) + 270;
+                    eye.style.transform = "rotate("+ rot +"deg)";
+            })
+          }
+        </script>
+    </body>
+</html>
